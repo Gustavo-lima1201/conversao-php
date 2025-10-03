@@ -24,3 +24,8 @@ function converterEuro($valor): float {
     $valorconvertido = $valor / $cotacao;
     return $valorconvertido;
 }
+function converterLibra($valor): float {
+    $cotacao = 7.19;
+    $valorconvertido = $valor / $cotacao;
+    return $valorconvertido;
+}
