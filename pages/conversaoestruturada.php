@@ -48,3 +48,10 @@ function obterSimboloMoeda($moeda): string {
     }
     return "";
 }
+function mensagens ($moeda, $valor, $conversao, $simboloMoeda): string {
+    if ($conversao === 0) {
+        return "Erro na conversão.";
+    } else {
+        return "O valor de R$ $valor em $moeda é $simboloMoeda " . number_format($conversao, 2, ',', '.') . ".";
+    }
+}
