@@ -5,6 +5,8 @@ $conversao = 0;
 $mensagem = "";
 $simboloMoeda = "";
 
+
+
 if ($moeda === "dolar") {
     $conversao = $valor / 5.34;
     $simboloMoeda = "US$";
@@ -16,12 +18,13 @@ if ($moeda === "dolar") {
     $simboloMoeda = "£";
 
 }
-
 if ($conversao === 0) {
     $mensagem = "Erro na conversão.";
 } else {
     $mensagem = "O valor de R$ $valor em $moeda é $simboloMoeda " . number_format($conversao, 2, ',', '.') . ".";
 }
+
+
 
 
 ?>
