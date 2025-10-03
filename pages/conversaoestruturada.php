@@ -1,3 +1,4 @@
+<?php
 
 function validarEntrada($moeda, $valor): bool {
     $moedasValidas = ["dolar", "euro", "libra"];
