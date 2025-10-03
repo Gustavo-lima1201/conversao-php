@@ -19,5 +19,8 @@ function converterDolar($valor): float {
     $valorconvertido = $valor / $cotacao;
     return $valorconvertido;
 }
-
-?>
+function converterEuro($valor): float {
+    $cotacao = 6.26;
+    $valorconvertido = $valor / $cotacao;
+    return $valorconvertido;
+}
