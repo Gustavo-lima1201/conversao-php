@@ -1,0 +1,105 @@
+/* style.css */
+
+/* Fundo geral */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Card com efeito vidro */
+form {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 35px;
+    width: 340px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    color: #fff;
+}
+
+/* Labels */
+form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-align: left;
+    font-size: 14px;
+}
+
+/* Inputs de texto */
+form input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.2);
+    transition: 0.3s ease;
+}
+
+form input[type="text"]::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+form input[type="text"]:focus {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 8px rgba(255,255,255,0.6);
+}
+
+/* Select estilizado */
+form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    box-shadow: inset 2px 2px 5px rgba(0,0,0,0.2);
+    transition: 0.3s ease;
+    appearance: none; /* remove seta padrão */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+/* Opções dentro do select */
+form select option {
+    background: #fff;   /* fundo sólido */
+    color: #333;        /* texto escuro */
+    font-weight: 500;
+}
+
+/* Botão */
+form input[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #ff512f, #dd2476);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
