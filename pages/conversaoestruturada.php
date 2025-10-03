@@ -1,4 +1,9 @@
 <?php
+$moeda = filter_input(INPUT_GET, "moeda", FILTER_SANITIZE_STRING);
+$valor = filter_input(INPUT_GET, "valor", FILTER_SANITIZE_NUMBER_FLOAT);
+$cotacao = 0;
+$mensagem = "";
+
 
 function validarEntrada($moeda, $valor): bool {
     $moedasValidas = ["dolar", "euro", "libra"];
@@ -29,7 +34,7 @@ function converterLibra($valor): float {
     $valorconvertido = $valor / $cotacao;
     return $valorconvertido;
 }
-function escolherMoeda($moeda, $valor): float {
+function converterMoeda($moeda, $valor): float {
     if ($moeda === "dolar") {
         return converterDolar($valor);
     } elseif ($moeda === "euro") {
@@ -38,7 +43,7 @@ function escolherMoeda($moeda, $valor): float {
         return converterLibra($valor);
     }
 }
-function obterSimboloMoeda($moeda): string {
+function simboloMoeda($moeda): string {
     if ($moeda === "dolar") {
         return "US$";
     } elseif ($moeda === "euro") {
@@ -48,10 +53,25 @@ function obterSimboloMoeda($moeda): string {
     }
     return "";
 }
-function mensagens ($moeda, $valor, $conversao, $simboloMoeda): string {
-    if ($conversao === 0) {
+function mensagens ($moeda, $valor, $cotacao): string {
+    if ($cotacao === 0) {
         return "Erro na conversão.";
     } else {
-        return "O valor de R$ $valor em $moeda é $simboloMoeda " . number_format($conversao, 2, ',', '.') . ".";
+        return "O valor de R$ $valor em $moeda é " . simboloMoeda($moeda) . converterMoeda($moeda, $valor) . number_format($cotacao, 2, ',', '.') . ".";
     }
 }
+?>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <?php echo mensagens($moeda, $valor, $cotacao); ?>
+    <a href="../index.html">← Voltar</a>
+    
+</body>
+</html>
