@@ -29,3 +29,12 @@ function converterLibra($valor): float {
     $valorconvertido = $valor / $cotacao;
     return $valorconvertido;
 }
+function escolherMoeda($moeda, $valor): float {
+    if ($moeda === "dolar") {
+        return converterDolar($valor);
+    } elseif ($moeda === "euro") {
+        return converterEuro($valor);
+    } elseif ($moeda === "libra") {
+        return converterLibra($valor);
+    }
+}
