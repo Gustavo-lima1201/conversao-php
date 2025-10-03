@@ -14,4 +14,10 @@ function validarEntrada($moeda, $valor): bool {
 }
 
 
+function converterDolar($valor): float {
+    $cotacao = 5.34;
+    $valorconvertido = $valor / $cotacao;
+    return $valorconvertido;
+}
+
 ?>
