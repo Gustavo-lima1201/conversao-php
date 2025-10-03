@@ -38,3 +38,13 @@ function escolherMoeda($moeda, $valor): float {
         return converterLibra($valor);
     }
 }
+function obterSimboloMoeda($moeda): string {
+    if ($moeda === "dolar") {
+        return "US$";
+    } elseif ($moeda === "euro") {
+        return "€";
+    } elseif ($moeda === "libra") {
+        return "£";
+    }
+    return "";
+}
